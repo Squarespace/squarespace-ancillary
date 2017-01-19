@@ -1,0 +1,22 @@
+{
+  "name": "@squarespace/ancillary",
+  "version": "1.0.0",
+  "author": "Squarespace, Inc.",
+  "description": "Moves elements into the right place",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "build": "npm run lint && babel src --out-dir dist",
+    "prepublish": "npm run build",
+    "watch": "babel src --watch --out-dir dist"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^2.0.0",
+    "eslint-config-squarespace": "^1.0.0"
+  }
+}
