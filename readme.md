@@ -9,7 +9,7 @@ Ancillary is a layout script to move a set of "element" DOM nodes into a set of 
 
 *Before Ancillary:*
 
-```
+```html
 <body class="ancillary-header-logo-position-left ancillary-header-nav-position-right ancillary-header-cta-position-right">
   <header data-nc-base="header">
     <div data-nc-container="left">
@@ -24,7 +24,7 @@ Ancillary is a layout script to move a set of "element" DOM nodes into a set of 
 
 *After Ancillary:*
 
-```
+```html
 <body class="ancillary-header-logo-position-left ancillary-header-nav-position-right ancillary-header-cta-position-right">
   <header data-nc-base="header">
     <div data-nc-container="left">
@@ -69,12 +69,24 @@ You've completed the process of creating your Ancillary layout. Feel free to put
 ### Javascript
 
 ```js
-import Ancillary from 'sqs-ancillary';
+import Ancillary from '@squarespace/ancillary';
 
 const header = document.querySelector('[data-nc-base="header"]');
 const headerAncillary = new Ancillary(header);
 headerAncillary.sync();
 ```
+
+### Using ES6
+
+If you prefer to handle transpiling and polyfilling on your own, you can import ES6 from Ancillary:
+
+```js
+import ancillary from '@squarespace/ancillary/src';
+```
+
+Alternately, Ancillary specifies a `module` property in `package.json` that points to the uncompiled `src/index.js`, so you may be able to simply import `@squarespace/ancillary` if you're using one of the following bundlers:
+* [Webpack 2](https://webpack.js.org/configuration/resolve/#resolve-mainfields)
+* [Rollup](https://github.com/rollup/rollup-plugin-node-resolve#rollup-plugin-node-resolve)
 
 
 ## Developer's Notes
